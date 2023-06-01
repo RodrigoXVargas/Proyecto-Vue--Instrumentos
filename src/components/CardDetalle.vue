@@ -10,16 +10,21 @@
             </div>
             <div class="det-col2-content">
                 <div class="det-datos-content">
-                    <p class="det-cantVentas">{{instrumentoParam.cantidad_vendida}} vendidos</p>
-                    <h4 class="det-titulo">{{instrumentoParam.instrumento}}</h4>
-                    <p class="det-precio">$ {{instrumentoParam.precio}}</p>
-                    <p class="det-marca">Marca: {{instrumentoParam.marca}}</p>
-                    <p class="det-modelo">Modelo: {{instrumentoParam.modelo}}</p>
-                    <p class="det-costo">Costo de envio: 
-                        <button v-if="instrumentoParam.costo_envio === 'G'" class="btn btn-success" disabled>¡Gratis!</button>
-                        <span v-else>$ {{ instrumentoParam.costo_envio }}</span>
-                    </p>
-                    <router-link to="/" type="button" class="det-buttom-carrito">Atras</router-link>
+                    <div class="div-contenido">
+                        <p class="det-cantVentas">{{instrumentoParam.cantidad_vendida}} vendidos</p>
+                        <h4 class="det-titulo">{{instrumentoParam.instrumento}}</h4>
+                        <p class="det-precio">$ {{instrumentoParam.precio}}</p>
+                        <p class="det-marca">Marca: {{instrumentoParam.marca}}</p>
+                        <p class="det-modelo">Modelo: {{instrumentoParam.modelo}}</p>
+                        <p class="det-costo">Costo de envio: 
+                            <button v-if="instrumentoParam.costo_envio === 'G'" class="btn btn-success" disabled>¡Gratis!</button>
+                            <span v-else>$ {{ instrumentoParam.costo_envio }}</span>
+                        </p>
+                    </div>
+                    <div class="divDelboton">
+                        <router-link to="/" type="button" class="det-buttom-atras">Atras</router-link>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -90,6 +95,12 @@ export default defineComponent({
     grid-column: 2 / span 1;
 }
 
+.div-contenido {
+    width: 100%;
+    min-height: 300px;
+    max-height: 350px;
+}
+
 .det-cantVentas {
     margin: 0;
     font-size: 15px;
@@ -117,18 +128,22 @@ export default defineComponent({
     margin-top: 20px;
 }
 
-.det-buttom-carrito {
-    margin-left: 150px;
+.divDelboton {
+    width: 100%;
+    height: 180px;
+    display: grid;
+    place-items: center;
+}
+
+.det-buttom-atras {
     width: 150px;
     padding: 10px 15px;
     color: rgb(61, 61, 61);
     border: 2px solid rgb(61, 61, 61);
     border-radius: 10px;
-    display: grid;
-    margin-top: 130px;
 }
 
-.det-buttom-carrito:hover {
+.det-buttom-atras:hover {
     color: #fff;
     background-color: rgb(61, 61, 61);
 }
