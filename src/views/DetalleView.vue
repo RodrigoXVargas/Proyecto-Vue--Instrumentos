@@ -36,7 +36,7 @@ export default defineComponent({
         let resJson = await response.json();
         this.instrumentoXid = resJson;
         console.log(response);
-}
+    }
   }
 });
 </script>
